@@ -10,7 +10,7 @@
 
 **Developer intelligence for DeepSeek Harness: 201 read-only tools across GitHub, 16 external ecosystems, and the dsh registry itself** — now with an authenticated maintainer inbox and evidence-based repository health audits. Public tools need no API key; every request supports cancellation, rate-limit-friendly TTL caching, and UI cards.
 
-> Topic: [`dsh-plugin`](https://github.com/topics/dsh-plugin) · Tested with `dsh` 0.1.0-rc.6 · Node 24 / pnpm 11
+> Topic: [`dsh-plugin`](https://github.com/topics/dsh-plugin) · Tested with `dsh` 0.2.0-rc.2 · Node 24 / pnpm 11
 
 **Live tool catalog:** https://zoahdev.github.io/dsh-github-intelligence/
 
@@ -173,7 +173,7 @@ MIT © 2026 zoahdev
 
 **dsh-github-intelligence —— 面向 DeepSeek Harness 的开发者情报系统：201 个只读工具，覆盖 GitHub、16 大外部生态与 dsh 注册表**。新增维护者通知待办和可解释的仓库健康审计；公共工具无需 API Key，全部请求支持取消、TTL 缓存与 UI 卡片。
 
-> 话题：[`dsh-plugin`](https://github.com/topics/dsh-plugin) · 已在 `dsh` 0.1.0-rc.6 / Node 24 / pnpm 11 实测
+> 话题：[`dsh-plugin`](https://github.com/topics/dsh-plugin) · 已在 `dsh` 0.2.0-rc.2 / Node 24 / pnpm 11 实测
 
 ## 工具
 
