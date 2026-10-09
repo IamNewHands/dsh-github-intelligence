@@ -1185,7 +1185,10 @@ const objectParsers: Record<string, (raw: unknown) => unknown> = {
   },
   dshEcosystemStats(raw) {
     const r = raw as Record<string, unknown>
-    const count = n(r.count) || n(r.pluginCount) || n(r.total) || n(r.plugins)
+    // The live endpoint answers with a shields.io badge document, not a count
+    // object: {"label":"plugins","message":"4460",...} — a numeric string under
+    // `message`. Keep the plain-count fallbacks first, then read the badge.
+    const count = n(r.count) || n(r.pluginCount) || n(r.total) || n(r.plugins) || n(Number(r.message))
     return {
       pluginCount: count,
       source: s(r.source) ?? 'awesome-dsh-plugin.com',

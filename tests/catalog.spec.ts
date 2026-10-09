@@ -73,6 +73,22 @@ describe('generated tools', () => {
     expect(result).toMatchObject({ item: { pluginCount: 1701 } })
   })
 
+  it('parses dsh ecosystem stats from the live shields.io badge response', async () => {
+    // Regression: the real endpoint returns a badge document, and its value is a
+    // numeric STRING under `message` — the plain-count fallbacks all miss it.
+    const fetch = fetcherMock(() => ({
+      schemaVersion: 1,
+      label: 'plugins',
+      message: '4460',
+      color: 'c0392b',
+      cacheSeconds: 300,
+    }))
+    const spec = catalog.find((s) => s.name === 'dsh_ecosystem_stats')
+    const tool = buildCatalogTool(fetch, spec!)
+    const result = await tool.execute({}, exec())
+    expect(result).toMatchObject({ item: { pluginCount: 4460 } })
+  })
+
   it('help tool reports the total tool count', async () => {
     const help = buildHelpTool(catalog.length + 10)
     const result = await help.execute({}, exec())
