@@ -48,14 +48,15 @@ Example prompts:
 
 ## Install
 
-```sh
-dsh plugin --profile web add dsh-github-intelligence
-# or, using the upstream CLI directly:
-pnpm dlx @deepseek-ai/dsh plugin --profile web add dsh-github-intelligence
+Install from **this fork** — the published npm release lags behind this repository and is not adapted to the current `dsh` release:
 
-# standalone CLI (same catalog, for humans):
-npm install -g dsh-github-intelligence
+```sh
+dsh plugin --profile web add "github:IamNewHands/dsh-github-intelligence"
+# or, using the upstream CLI directly:
+pnpm dlx @deepseek-ai/dsh plugin --profile web add "github:IamNewHands/dsh-github-intelligence"
 ```
+
+This is a git-hosted install, so pnpm must be allowed to run the package's `prepare` build. If the install fails with `ERR_PNPM_GIT_DEP_PREPARE_NOT_ALLOWED`, add the exact key pnpm prints to `allowBuilds` in `<profile>/pnpm-workspace.yaml`, then re-run.
 
 Then restart `dsh web` and ask your agent to use the tools above.
 
@@ -207,11 +208,15 @@ GitHub 之外，目录还覆盖 **GitLab、Gitee、npm、PyPI、crates.io、Dock
 
 ## 安装
 
+从**本 fork** 安装 —— npm 上发布的版本落后于本仓库，且未适配当前 `dsh` 版本：
+
 ```sh
-dsh plugin --profile web add dsh-github-intelligence
+dsh plugin --profile web add "github:IamNewHands/dsh-github-intelligence"
 # 或直接使用上游 CLI：
-pnpm dlx @deepseek-ai/dsh plugin --profile web add dsh-github-intelligence
+pnpm dlx @deepseek-ai/dsh plugin --profile web add "github:IamNewHands/dsh-github-intelligence"
 ```
+
+这是 git 源安装，pnpm 需要被允许执行该包的 `prepare` 构建。若安装报 `ERR_PNPM_GIT_DEP_PREPARE_NOT_ALLOWED`，把 pnpm 打印出的精确键加入 `<profile>/pnpm-workspace.yaml` 的 `allowBuilds` 后重跑。
 
 ## 为什么说"最完整"
 
